@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0FFFFFFF"
+        android:contentDescription="@string/image_warning"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="?attr/editTextBackground"
+            android:baseline="10dp"
+            android:contentDescription="@string/image_warning"
+            android:src="@drawable/main_logo"
+            app:layout_constraintBottom_toTopOf="@+id/mainlogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/search_summoner"
+            android:layout_width="355dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:hint="@string/search_summoner"
+            android:imeOptions="actionSearch"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textSize="12.5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainlogo" />
+
+        <ImageView
+            android:id="@+id/mainlogo"
+            android:layout_width="131dp"
+            android:layout_height="148dp"
+            android:layout_marginTop="80dp"
+            android:contentDescription="@string/image_warning"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/leagueoflegend_logo" />
+
+        <ImageButton
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:contentDescription="@string/image_warning"
+            app:layout_constraintBottom_toBottomOf="@+id/search_summoner"
+            app:layout_constraintEnd_toEndOf="@+id/search_summoner"
+            app:layout_constraintHorizontal_bias="0.972"
+            app:layout_constraintStart_toStartOf="@+id/search_summoner"
+            app:layout_constraintTop_toTopOf="@+id/search_summoner"
+            app:layout_constraintVertical_bias="0.38"
+            app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/view_search"
+            android:layout_width="355dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/image_border"
+            android:paddingTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_summoner"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/image_web"
+            android:layout_width="355dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="464dp"
+            android:background="?attr/editTextBackground"
+            android:backgroundTint="@color/gray1"
+            android:contentDescription="TODO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/main" />
+
+        <ImageView
+            android:id="@+id/riot_web"
+            android:layout_width="101dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="564dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.093"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/riot_web"
+            app:tint="@color/firsnal" />
+
+        <ImageView
+            android:id="@+id/image_webs"
+            android:layout_width="355dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="532dp"
+            android:background="?attr/editTextBackground"
+            android:backgroundTint="@color/gray1"
+            android:contentDescription="TODO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lol_webs"
+            android:layout_width="255dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="500dp"
+            android:gravity="center"
+            android:text="@string/lol_web"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.826"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/lol_web"
+            android:layout_width="101dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="500dp"
+            android:backgroundTint="@color/empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/leagueoflegend_web"
+            app:tint="@color/firsnal" />
+
+        <TextView
+            android:id="@+id/riot_webs"
+            android:layout_width="255dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="564dp"
+            android:gravity="center"
+            android:text="@string/riot_web"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.826"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_webss"
+            android:layout_width="355dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="596dp"
+            android:background="?attr/editTextBackground"
+            android:backgroundTint="@color/gray1"
+            android:contentDescription="TODO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/recent_searches"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/design_default_color_background"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/editTextBackground"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/button_searches"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                app:srcCompat="?attr/actionModeCloseDrawable" />
+
+            <TextView
+                android:id="@+id/text_searches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:gravity="center"
+                android:text="@string/recent_searches"
+                android:textColor="@color/firsnal"
+                android:textSize="17.5dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/view_like"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>

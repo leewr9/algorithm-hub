@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp">
+
+    <TextView
+        android:id="@+id/tv_Match_Duration"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_ChampionIcon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/image_border"
+        app:layout_constraintStart_toEndOf="@+id/tv_Match_Duration"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_Spell01"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:background="@drawable/image_border"
+        app:layout_constraintStart_toEndOf="@+id/iv_ChampionIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_Spell02"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/image_border"
+        app:layout_constraintStart_toEndOf="@+id/iv_ChampionIcon"
+        app:layout_constraintTop_toBottomOf="@+id/iv_Spell01" />
+
+    <ImageView
+        android:id="@+id/iv_Rune01"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_Spell01"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_Rune02"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_Spell02"
+        app:layout_constraintTop_toBottomOf="@+id/iv_Rune01" />
+
+    <TextView
+        android:id="@+id/tv_KDA1"
+        android:layout_width="80dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="18dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/iv_Rune01"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_KDA"
+        android:layout_width="80dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:textColor="@color/firsnal"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_Rune02"
+        app:layout_constraintTop_toBottomOf="@+id/tv_KDA1"
+        app:layout_constraintVertical_bias="0.048" />
+
+    <ImageView
+        android:id="@+id/iv_item00"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/image_border"
+        android:src="@drawable/empty_item"
+        app:layout_constraintStart_toEndOf="@+id/tv_Match_Duration"
+        app:layout_constraintTop_toBottomOf="@+id/iv_ChampionIcon" />
+
+    <ImageView
+        android:id="@+id/iv_item01"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/image_border"
+        android:src="@drawable/empty_item"
+        app:layout_constraintStart_toEndOf="@+id/iv_item00"
+        app:layout_constraintTop_toBottomOf="@+id/iv_ChampionIcon" />
+
+    <ImageView
+        android:id="@+id/iv_item02"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/image_border"
+        android:src="@drawable/empty_item"
+        app:layout_constraintStart_toEndOf="@+id/iv_item01"
+        app:layout_constraintTop_toBottomOf="@+id/iv_Rune02" />
+
+    <ImageView
+        android:id="@+id/iv_item03"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/image_border"
+        android:src="@drawable/empty_item"
+        app:layout_constraintStart_toEndOf="@+id/iv_item02"
+        app:layout_constraintTop_toBottomOf="@+id/tv_KDA" />
+
+    <ImageView
+        android:id="@+id/iv_item04"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/image_border"
+        android:src="@drawable/empty_item"
+        app:layout_constraintStart_toEndOf="@+id/iv_item03"
+        app:layout_constraintTop_toBottomOf="@+id/tv_KDA" />
+
+    <ImageView
+        android:id="@+id/iv_item05"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/image_border"
+        android:src="@drawable/empty_item"
+        app:layout_constraintStart_toEndOf="@+id/iv_item04"
+        app:layout_constraintTop_toBottomOf="@+id/tv_KDA" />
+
+    <ImageView
+        android:id="@+id/iv_item06"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/image_border"
+        android:src="@drawable/empty_item"
+        app:layout_constraintStart_toEndOf="@+id/iv_item05"
+        app:layout_constraintTop_toBottomOf="@+id/tv_KDA" />
+
+    <TextView
+        android:id="@+id/tv_TypeDate"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="4dp"
+        android:gravity="center|right"
+        android:textSize="11.5dp"
+        android:textColor="@color/firsnal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="?attr/editTextBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_item04"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

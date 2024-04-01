@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.fragmentMain.ItemFragment">
+
+        <ImageView
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="?attr/editTextBackground"
+            android:baseline="10dp"
+            android:contentDescription="@string/image_warning"
+            android:src="@drawable/main_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:imeOptions="actionSearch"
+            android:id="@+id/search_item"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/search_item"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textSize="12.5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_warning"
+            app:layout_constraintBottom_toBottomOf="@+id/search_item"
+            app:layout_constraintEnd_toEndOf="@+id/search_item"
+            app:layout_constraintHorizontal_bias="0.972"
+            app:layout_constraintStart_toStartOf="@+id/search_item"
+            app:layout_constraintTop_toTopOf="@+id/search_item"
+            app:layout_constraintVertical_bias="0.38"
+            app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
+
+        <Spinner
+            android:id="@+id/spinner_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/등급"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_item"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/view_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_item"
+            app:layout_constraintVertical_bias="0.041" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/recent_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/design_default_color_background"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/button_item"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                app:srcCompat="?attr/actionModeCloseDrawable" />
+
+            <TextView
+                android:id="@+id/text_items"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:paddingTop="10dp"
+                android:textColor="@color/firsnal"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_tags"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="20dp"
+                android:textColor="@color/firsnal"
+                android:textSize="12.5dp"
+                android:textStyle="italic" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/editTextBackground"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image_items"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/image_border" />
+
+            <TextView
+                android:id="@+id/plaintext_items"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:textColor="@color/firsnal"
+                android:textSize="12.5dp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/description_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/firsnal"
+            android:textSize="12.5dp" />
+
+
+        <TextView
+            android:id="@+id/total_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:paddingBottom="15dp"
+            android:textColor="@color/firsnal"
+            android:background="?attr/editTextBackground"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/item_main"
+            android:textColor="@color/firsnal"
+            android:textSize="15dp"
+            android:textStyle="bold"
+
+            />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/slide_main"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="7dp" />
+
+        <TextView
+            android:id="@+id/text_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/item_sub"
+            android:textColor="@color/firsnal"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/slide_sub"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="7dp" />
+
+    </LinearLayout>
+</FrameLayout>

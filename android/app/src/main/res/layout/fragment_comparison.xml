@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/comparison_damage"
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/comparison_heart"
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="-10dp"
+        android:background="?attr/editTextBackground"
+        android:backgroundTint="@color/gray1"
+        android:contentDescription="TODO" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/comparison_kill"
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/comparison_object"
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="-10dp"
+        android:background="?attr/editTextBackground"
+        android:backgroundTint="@color/gray1"
+        android:contentDescription="TODO" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/comparison_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/comparison_minion"
+            android:layout_width="wrap_content"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="등급">
+        <item>모든 아이템</item>
+        <item>시작 아이템</item>
+        <item>소모 아이템</item>
+        <item>이동 아이템</item>
+        <item>기본 아이템</item>
+        <item>서사 아이템</item>
+        <item>전설 아이템</item>
+        <item>신화 아이템</item>
+    </string-array>
+</resources>

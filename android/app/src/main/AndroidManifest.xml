@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.nagneo_gg">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:icon="@mipmap/ic_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Nagneo_gg"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".LoadingActivity" />
+        <activity
+            android:name=".MatchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

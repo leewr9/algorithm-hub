@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">NAGNEO.GG</string>
+    <string name="search_summoner">리그오브레전드 닉네임[로고 클릭시 즐겨찾기]</string>
+    <string name="search_champion">리그오브레전드 챔피언</string>
+    <string name="search_item">리그오브레전드 아이템</string>
+    <string name="tap_summoner">소환사 검색</string>
+    <string name="tap_champion">챔피언 검색</string>
+    <string name="tap_item">아이템 검색</string>
+    <string name="image_warning">이미지 로딩 실패</string>
+    <string name="recent_searches">소환사 즐겨찾기</string>
+    <string name="item_main">상위아이템</string>
+    <string name="item_sub">하위아이템</string>
+    <string name="solo_lank">솔로 랭크</string>
+    <string name="team_lank">자유 5:5 랭크</string>
+    <string name="lank_tier">UNRANKED</string>
+    <string name="lank_point">0포인트</string>
+    <string name="lank_kda">0승 0패 승률 0%</string>
+    <string name="recent_match">뒤로가기</string>
+    <string name="object_zero">0</string>
+    <string name="tap_total">종　합</string>
+    <string name="tap_damage">딜　량</string>
+    <string name="tap_comparison">비　교</string>
+    <string name="damage_this">나의 팀 [</string>
+    <string name="damage_another">상대 팀 [</string>
+    <string name="lol_web">리그오브레전드 홈페이지</string>
+    <string name="riot_web">라이엇게임즈 홈페이지</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="firsnal">#FF303030</color>
+    <color name="firsnal1">#FF303031</color>
+    <color name="firsnal2">#FF303032</color>
+    <color name="firsnal3">#FF303033</color>
+    <color name="firsnal4">#FF303034</color>
+    <color name="firsnal5">#FF303035</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF9F0000</color>
+    <color name="blue">#FF00409F</color>
+    <color name="gray">#FF9F9F9F</color>
+    <color name="red1">#559F0000</color>
+    <color name="blue1">#5500409F</color>
+    <color name="gray1">#559F9F9F</color>
+    <color name="empty">#00000000</color>
+</resources>
