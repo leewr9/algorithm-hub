@@ -28,12 +28,8 @@ def solution(N, road, K):
             elif s == end and distances[start] > d_distance:
                 heapq.heappush(check, (d_distance, start))
                 distances[start] = d_distance
-    print(distances, K)
     answer = len([d for d in distances if d <= K])
-    print(answer)
     return answer
 
 if __name__ == '__main__':
     solution(6, [[1,2,7],[1,6,14],[1,3,9],[2,3,10],[3,6,2],[3,4,11],[2,4,15],[6,5,9],[4,5,6]], 4)
-    solution(6, [[1,2,1],[1,3,2],[2,3,2],[3,4,3],[3,5,2],[3,5,3],[5,6,1]], 4)
-    solution(5, [[1,2,1],[2,3,3],[5,2,2],[1,4,2],[5,3,1],[5,4,2]], 3)
