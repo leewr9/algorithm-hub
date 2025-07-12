@@ -16,11 +16,11 @@ permissions:
 
 jobs:
   test-self-hosted:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - name: PRMate Review
-      uses: leewr9/prmate@v1.0.7
+      uses: leewr9/prmate@v1.0.8
       with:
         pr-number: ${{ inputs.pr_number }}
         repository: ${{ github.repository }}
@@ -36,7 +36,7 @@ jobs:
 
     steps:
     - name: PRMate Review
-      uses: leewr9/prmate@v1.0.7
+      uses: leewr9/prmate@v1.0.8
       with:
         pr-number: ${{ inputs.pr_number }}
         repository: ${{ github.repository }}
