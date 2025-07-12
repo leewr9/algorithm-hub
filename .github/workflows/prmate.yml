@@ -1,0 +1,47 @@
+name: PRMate
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR Number'
+        required: true
+        type: number
+
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  test-self-hosted:
+    runs-on: self-hosted
+
+    steps:
+    - name: PRMate Review
+      uses: leewr9/prmate@v1.0.5
+      with:
+        pr-number: ${{ inputs.pr_number }}
+        repository: ${{ github.repository }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+        ollama-host: 'http://127.0.0.1:11434'
+        review-language: 'English'
+        review-strict: 'True'
+
+
+  test-ubuntu-latest:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: PRMate Review
+      uses: leewr9/prmate@v1.0.5
+      with:
+        pr-number: ${{ inputs.pr_number }}
+        repository: ${{ github.repository }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+        ollama-host: 'http://127.0.0.1:11434'
+        review-language: 'Korean'
+        review-strict: 'True'
