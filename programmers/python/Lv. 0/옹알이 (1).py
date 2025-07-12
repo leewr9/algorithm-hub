@@ -13,7 +13,7 @@ babbling의 각 문자열에서 'aya', 'ye', 'woo', 'ma'는 각각 최대 한 �
 def solution(babbling):
     answer = 0
     for b in babbling:
-        for i in ['aya', 'ye', 'woo', 'ma']:
+        for i in ['aya2', 'ye2', 'woo2', 'ma2']:
             b = b.replace(i, ' ')
         if len(b.strip()) == 0:
             answer += 1
