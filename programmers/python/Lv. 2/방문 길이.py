@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 게임 캐릭터를 4가지 명령어를 통해 움직이려 합니다. 명령어는 다음과 같습니다.
 
@@ -42,7 +42,8 @@ L: 왼쪽으로 한 칸 가기
 제한사항
 dirs는 string형으로 주어지며, 'U', 'D', 'R', 'L' 이외에 문자는 주어지지 않습니다.
 dirs의 길이는 500 이하의 자연수입니다.
-'''
+"""
+
 
 def solution(dirs):
     answer = 0
@@ -50,13 +51,13 @@ def solution(dirs):
     user = [0, 0]
     for dir in dirs:
         point = (user[0], user[1])
-        if dir == 'U':
+        if dir == "U":
             user[1] += 1 if user[1] < 5 else 0
-        elif dir == 'D':
+        elif dir == "D":
             user[1] -= 1 if user[1] > -5 else 0
-        elif dir == 'R':
+        elif dir == "R":
             user[0] += 1 if user[0] < 5 else 0
-        elif dir == 'L':
+        elif dir == "L":
             user[0] -= 1 if user[0] > -5 else 0
         move = (user[0], user[1])
         if move != point and point + move not in check and move + point not in check:
@@ -64,5 +65,6 @@ def solution(dirs):
     answer = len(check)
     return answer
 
-if __name__ == '__main__':
-    solution('LLLLLLUURRRDDLURL')
+
+if __name__ == "__main__":
+    solution("LLLLLLUURRRDDLURL")

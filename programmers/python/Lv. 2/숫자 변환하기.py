@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 자연수 x를 y로 변환하려고 합니다. 사용할 수 있는 연산은 다음과 같습니다.
 
@@ -10,7 +10,8 @@ x에 3을 곱합니다.
 제한사항
 1 ≤ x ≤ y ≤ 1,000,000
 1 ≤ n < y
-'''
+"""
+
 
 def solution(x, y, n):
     queue, check = [(y, 0)], []
@@ -31,5 +32,6 @@ def solution(x, y, n):
 
     return -1
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     solution(2, 5, 4)

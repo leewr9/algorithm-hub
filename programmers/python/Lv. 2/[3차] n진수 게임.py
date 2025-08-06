@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 N진수 게임
 튜브가 활동하는 코딩 동아리에서는 전통적으로 해오는 게임이 있다. 이 게임은 여러 사람이 둥글게 앉아서 숫자를 하나씩 차례대로 말하는 게임인데, 규칙은 다음과 같다.
@@ -24,20 +24,22 @@ N진수 게임
 1 ≦ p ≦ m
 출력 형식
 튜브가 말해야 하는 숫자 t개를 공백 없이 차례대로 나타낸 문자열. 단, 10~15는 각각 대문자 A~F로 출력한다.
-'''
+"""
+
 
 def base(n, i):
     if i == 0:
-        return '0'
+        return "0"
     nums = []
     while i:
         nums.append(i % n)
         i //= n
-    return ''.join([str(num) if num < 10 else chr(num + 55) for num in nums[::-1]])
+    return "".join([str(num) if num < 10 else chr(num + 55) for num in nums[::-1]])
+
 
 def solution(n, t, m, p):
-    answer = ''
-    num = ''
+    answer = ""
+    num = ""
     for i in range(t * m):
         num += base(n, i)
     for i in range(p - 1, len(num), m):
@@ -46,5 +48,6 @@ def solution(n, t, m, p):
             break
     return answer
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     solution(16, 16, 2, 2)

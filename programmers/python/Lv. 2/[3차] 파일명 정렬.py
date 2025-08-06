@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 파일명 정렬
 세 차례의 코딩 테스트와 두 차례의 면접이라는 기나긴 블라인드 공채를 무사히 통과해 카카오에 입사한 무지는 파일 저장소 서버 관리를 맡게 되었다.
@@ -35,17 +35,18 @@ files는 1000 개 이하의 파일명을 포함하는 문자열 배열이다.
 중복된 파일명은 없으나, 대소문자나 숫자 앞부분의 0 차이가 있는 경우는 함께 주어질 수 있다. (muzi1.txt, MUZI1.txt, muzi001.txt, muzi1.TXT는 함께 입력으로 주어질 수 있다.)
 출력 형식
 위 기준에 따라 정렬된 배열을 출력한다.
-'''
+"""
+
 
 def solution(files):
     answer = []
     for file in files:
-        head, number = '', ''
+        head, number = "", ""
         for c in file:
             if c.isdigit():
                 break
             head += c
-        for c in file[len(head):]:
+        for c in file[len(head) :]:
             if not c.isdigit():
                 break
             number += c
@@ -54,5 +55,13 @@ def solution(files):
     answer.sort(key=lambda x: (x[0], x[1]))
     return [file[2] for file in answer]
 
-if __name__ == '__main__':
-    solution(["F-5 Freedom Fighter", "B-50 Superfortress", "A-10 Thunderbolt II", "F-14 Tomcat"])
+
+if __name__ == "__main__":
+    solution(
+        [
+            "F-5 Freedom Fighter",
+            "B-50 Superfortress",
+            "A-10 Thunderbolt II",
+            "F-14 Tomcat",
+        ]
+    )

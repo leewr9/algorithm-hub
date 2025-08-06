@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 압축
 신입사원 어피치는 카카오톡으로 전송되는 메시지를 압축하여 전송 효율을 높이는 업무를 맡게 되었다. 메시지를 압축하더라도 전달되는 정보가 바뀌어서는 안 되므로, 압축 전의 정보를 완벽하게 복원 가능한 무손실 압축 알고리즘을 구현하기로 했다.
@@ -26,7 +26,7 @@ w에 해당하는 사전의 색인 번호를 출력하고, 입력에서 w를 제
 K	A	11	27: KA
 A	K	1	28: AK
 KA	O	27	29: KAO
-O		15	
+O		15
 이 과정을 거쳐 다섯 글자의 문장 KAKAO가 4개의 색인 번호 [11, 1, 27, 15]로 압축된다.
 
 입력으로 TOBEORNOTTOBEORTOBEORNOT가 들어오면 다음과 같이 압축이 진행된다.
@@ -47,13 +47,14 @@ OR	T	31	38: ORT
 TOB	E	36	39: TOBE
 EO	R	30	40: EOR
 RN	O	32	41: RNO
-OT		34	
+OT		34
 입력 형식
 입력으로 영문 대문자로만 이뤄진 문자열 msg가 주어진다. msg의 길이는 1 글자 이상, 1000 글자 이하이다.
 
 출력 형식
 주어진 문자열을 압축한 후의 사전 색인 번호를 배열로 출력하라.
-'''
+"""
+
 
 def solution(msg):
     answer = []
@@ -64,10 +65,10 @@ def solution(msg):
     while True:
         for i in range(1, len(msg) + 1):
             if msg[:i] not in index:
-                answer.append(index[msg[:i - 1]])
+                answer.append(index[msg[: i - 1]])
                 index[msg[:i]] = last
                 last += 1
-                msg = msg[i - 1:]
+                msg = msg[i - 1 :]
                 break
         else:
             answer.append(index[msg])
@@ -75,5 +76,6 @@ def solution(msg):
 
     return answer
 
-if __name__ == '__main__':
-    solution('TOBEORNOTTOBEORTOBEORNOT')
+
+if __name__ == "__main__":
+    solution("TOBEORNOTTOBEORTOBEORNOT")

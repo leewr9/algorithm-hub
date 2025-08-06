@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 뉴스 클러스터링
 여러 언론사에서 쏟아지는 뉴스, 특히 속보성 뉴스를 보면 비슷비슷한 제목의 기사가 많아 정작 필요한 기사를 찾기가 어렵다. Daum 뉴스의 개발 업무를 맡게 된 신입사원 튜브는 사용자들이 편리하게 다양한 뉴스를 찾아볼 수 있도록 문제점을 개선하는 업무를 맡게 되었다.
@@ -29,11 +29,20 @@
 다중집합 원소 사이를 비교할 때, 대문자와 소문자의 차이는 무시한다. "AB"와 "Ab", "ab"는 같은 원소로 취급한다.
 출력 형식
 입력으로 들어온 두 문자열의 자카드 유사도를 출력한다. 유사도 값은 0에서 1 사이의 실수이므로, 이를 다루기 쉽도록 65536을 곱한 후에 소수점 아래를 버리고 정수부만 출력한다.
-'''
+"""
+
 
 def solution(str1, str2):
-    str1_set = [str1[i:i + 2].upper() for i in range(len(str1) - 1) if str1[i:i + 2].isalpha()]
-    str2_set = [str2[i:i + 2].upper() for i in range(len(str2) - 1) if str2[i:i + 2].isalpha()]
+    str1_set = [
+        str1[i : i + 2].upper()
+        for i in range(len(str1) - 1)
+        if str1[i : i + 2].isalpha()
+    ]
+    str2_set = [
+        str2[i : i + 2].upper()
+        for i in range(len(str2) - 1)
+        if str2[i : i + 2].isalpha()
+    ]
 
     union, intersection = len(str1_set) + len(str2_set), 0
     for s in str1_set:
@@ -44,8 +53,9 @@ def solution(str1, str2):
 
     if union == 0:
         return 65536
-    
+
     return int(intersection / union * 65536)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     solution("ABABABABAB", "ABAB")

@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 0 또는 양의 정수가 주어졌을 때, 정수를 이어 붙여 만들 수 있는 가장 큰 수를 알아내 주세요.
 
@@ -10,14 +10,16 @@
 numbers의 길이는 1 이상 100,000 이하입니다.
 numbers의 원소는 0 이상 1,000 이하입니다.
 정답이 너무 클 수 있으니 문자열로 바꾸어 return 합니다.
-'''
+"""
+
 
 def solution(numbers):
-    answer = ''
+    answer = ""
     numbers = [str(n) for n in numbers]
-    numbers.sort(key=lambda x:x*4, reverse=True)
-    answer = int(''.join(numbers))
+    numbers.sort(key=lambda x: x * 4, reverse=True)
+    answer = int("".join(numbers))
     return str(answer)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     solution([0, 0, 0])

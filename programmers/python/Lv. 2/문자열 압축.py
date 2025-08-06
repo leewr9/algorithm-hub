@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 데이터 처리 전문가가 되고 싶은 "어피치"는 문자열을 압축하는 방법에 대해 공부를 하고 있습니다. 최근에 대량의 데이터 처리를 위한 간단한 비손실 압축 방법에 대해 공부를 하고 있는데, 문자열에서 같은 값이 연속해서 나타나는 것을 그 문자의 개수와 반복되는 값으로 표현하여 더 짧은 문자열로 줄여서 표현하는 알고리즘을 공부하고 있습니다.
 간단한 예로 "aabbaccc"의 경우 "2a2ba3c"(문자가 반복되지 않아 한번만 나타난 경우 1은 생략함)와 같이 표현할 수 있는데, 이러한 방식은 반복되는 문자가 적은 경우 압축률이 낮다는 단점이 있습니다. 예를 들면, "abcabcdede"와 같은 문자열은 전혀 압축되지 않습니다. "어피치"는 이러한 단점을 해결하기 위해 문자열을 1개 이상의 단위로 잘라서 압축하여 더 짧은 문자열로 표현할 수 있는지 방법을 찾아보려고 합니다.
@@ -12,28 +12,30 @@
 제한사항
 s의 길이는 1 이상 1,000 이하입니다.
 s는 알파벳 소문자로만 이루어져 있습니다.
-'''
+"""
+
 
 def solution(s):
     answer = len(s)
-    check = [''] * ((len(s) // 2) + 1)
+    check = [""] * ((len(s) // 2) + 1)
     for i in range(1, len(check)):
         before = s[0:i]
         count = 0
         for j in range(0, len(s) + 1, i):
-            if before == s[j:j+i]:
+            if before == s[j : j + i]:
                 count += 1
             else:
                 if count > 1:
-                    check[i] += (str(count) + before)
+                    check[i] += str(count) + before
                 else:
                     check[i] += before
-                before = s[j:j+i]
+                before = s[j : j + i]
                 count = 1
         check[i] += s[j:]
     if len(check) > 1:
         answer = min([len(c) for c in check if c])
     return answer
 
-if __name__ == '__main__':
-    solution('abcabcabcabcdededededede') # 5
+
+if __name__ == "__main__":
+    solution("abcabcabcabcdededededede")  # 5

@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 무인도에 갇힌 사람들을 구명보트를 이용하여 구출하려고 합니다. 구명보트는 작아서 한 번에 최대 2명씩 밖에 탈 수 없고, 무게 제한도 있습니다.
 
@@ -13,7 +13,8 @@
 각 사람의 몸무게는 40kg 이상 240kg 이하입니다.
 구명보트의 무게 제한은 40kg 이상 240kg 이하입니다.
 구명보트의 무게 제한은 항상 사람들의 몸무게 중 최댓값보다 크게 주어지므로 사람들을 구출할 수 없는 경우는 없습니다.
-'''
+"""
+
 
 def solution(people, limit):
     answer = 0
@@ -21,10 +22,11 @@ def solution(people, limit):
     left, right = 0, len(people) - 1
     while left <= right:
         if people[left] + people[right] <= limit:
-            left += 1 
-        right -= 1 
-        answer += 1 
+            left += 1
+        right -= 1
+        answer += 1
     return answer
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     solution([70, 50, 80, 50], 100)

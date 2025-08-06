@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 어떤 숫자에서 k개의 수를 제거했을 때 얻을 수 있는 가장 큰 숫자를 구하려 합니다.
 
@@ -9,18 +9,20 @@
 제한 조건
 number는 2자리 이상, 1,000,000자리 이하인 숫자입니다.
 k는 1 이상 number의 자릿수 미만인 자연수입니다.
-'''
+"""
+
 
 def solution(number, k):
-    answer = ''
+    answer = ""
     check = []
     for n in number:
         while k > 0 and len(check) > 0 and check[-1] < n:
             check.pop()
             k -= 1
         check.append(n)
-    answer = ''.join(check)[:len(number) - k]
+    answer = "".join(check)[: len(number) - k]
     return answer
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     solution("98765", 2)

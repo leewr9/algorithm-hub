@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 괄호가 바르게 짝지어졌다는 것은 '(' 문자로 열렸으면 반드시 짝지어서 ')' 문자로 닫혀야 한다는 뜻입니다. 예를 들어
 
@@ -9,13 +9,14 @@
 제한사항
 문자열 s의 길이 : 100,000 이하의 자연수
 문자열 s는 '(' 또는 ')' 로만 이루어져 있습니다.
-'''
+"""
+
 
 def solution(s):
     answer = True
     check = []
     for ss in s:
-        if len(check) > 0 and check[-1] == '(' and ss == ')':
+        if len(check) > 0 and check[-1] == "(" and ss == ")":
             check.pop()
         else:
             check.append(ss)
@@ -23,5 +24,6 @@ def solution(s):
     answer = len(check) == 0
     return answer
 
-if __name__ == '__main__':
-    solution('()()')
+
+if __name__ == "__main__":
+    solution("()()")

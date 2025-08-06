@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 캐시
 지도개발팀에서 근무하는 제이지는 지도에서 도시 이름을 검색하면 해당 도시와 관련된 맛집 게시물들을 데이터베이스에서 읽어 보여주는 서비스를 개발하고 있다.
@@ -18,7 +18,8 @@ cities는 도시 이름으로 이뤄진 문자열 배열로, 최대 도시 수�
 캐시 교체 알고리즘은 LRU(Least Recently Used)를 사용한다.
 cache hit일 경우 실행시간은 1이다.
 cache miss일 경우 실행시간은 5이다.
-'''
+"""
+
 
 def solution(cacheSize, cities):
     answer = 0
@@ -37,5 +38,20 @@ def solution(cacheSize, cities):
                 caches.append(city)
     return answer
 
-if __name__ == '__main__':
-    solution(3, ["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"])
+
+if __name__ == "__main__":
+    solution(
+        3,
+        [
+            "Jeju",
+            "Pangyo",
+            "Seoul",
+            "NewYork",
+            "LA",
+            "Jeju",
+            "Pangyo",
+            "Seoul",
+            "NewYork",
+            "LA",
+        ],
+    )

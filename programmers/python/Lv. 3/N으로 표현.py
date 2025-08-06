@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 아래와 같이 5와 사칙연산만으로 12를 표현할 수 있습니다.
 
@@ -14,7 +14,8 @@ N은 1 이상 9 이하입니다.
 number는 1 이상 32,000 이하입니다.
 수식에는 괄호와 사칙연산만 가능하며 나누기 연산에서 나머지는 무시합니다.
 최솟값이 8보다 크면 -1을 return 합니다.
-'''
+"""
+
 
 def solution(N, number):
     answer = 0
@@ -31,6 +32,7 @@ def solution(N, number):
         return -1
     return answer
 
+
 def calc(nn, NN):
     all_calc = []
     for n in nn:
@@ -39,8 +41,9 @@ def calc(nn, NN):
             if n != 0:
                 all_calc.append(N // n)
             if N != 0:
-                all_calc.append(n // N)    
+                all_calc.append(n // N)
     return all_calc
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     solution(1, 121)

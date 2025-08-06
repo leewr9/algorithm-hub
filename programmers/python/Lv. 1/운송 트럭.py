@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 XX 회사는 트럭을 이용해 상품을 운반합니다. 트럭은 최대 무게가 한정되어있습니다. 직원은 트럭에 상품을 순서대로 실으며, 상품을 실을 수 없는 트럭은 바로 목적지로 출발합니다. 이때 우리는 모든 상품을 운반하는데 필요한 트럭은 최소 몇 대인지 구하려 합니다.
 
@@ -24,7 +24,8 @@ specs의 원소는 [상품 이름, 상품 무게]를 나타냅니다.
 이름이 같은 상품은 없습니다.
 names는 길이가 1 이상 10,000 이하인 배열입니다.
 names의 원소는 모두 specs에 있는 상품입니다.
-'''
+"""
+
 
 def solution(max_weight, specs, names):
     answer = 1
@@ -38,5 +39,6 @@ def solution(max_weight, specs, names):
             answer += 1
     return answer
 
-if __name__ == '__main__':
-    solution(300, [["toy","70"], ["snack", "200"]], ["toy", "snack", "snack"])
+
+if __name__ == "__main__":
+    solution(300, [["toy", "70"], ["snack", "200"]], ["toy", "snack", "snack"])

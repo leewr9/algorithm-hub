@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 오픈채팅방
 카카오톡 오픈채팅방에서는 친구가 아닌 사람들과 대화를 할 수 있는데, 본래 닉네임이 아닌 가상의 닉네임을 사용하여 채팅방에 들어갈 수 있다.
@@ -56,7 +56,8 @@ record는 다음과 같은 문자열이 담긴 배열이며, 길이는 1 이상 
 유저 아이디와 닉네임은 알파벳 대문자, 소문자를 구별한다.
 유저 아이디와 닉네임의 길이는 1 이상 10 이하이다.
 채팅방에서 나간 유저가 닉네임을 변경하는 등 잘못 된 입력은 주어지지 않는다.
-'''
+"""
+
 
 def solution(record):
     answer = []
@@ -66,14 +67,23 @@ def solution(record):
         parts = r.split()
         action = parts[0]
         user_id = parts[1]
-        if action != 'Leave':
+        if action != "Leave":
             user[user_id] = parts[2]
-        if action == 'Enter':
-            answer.append((user_id, '{user_name}님이 들어왔습니다.'))
-        elif action == 'Leave':
-            answer.append((user_id, '{user_name}님이 나갔습니다.'))
-    
+        if action == "Enter":
+            answer.append((user_id, "{user_name}님이 들어왔습니다."))
+        elif action == "Leave":
+            answer.append((user_id, "{user_name}님이 나갔습니다."))
+
     return [a[1].format(user_name=user[a[0]]) for a in answer]
 
-if __name__ == '__main__':
-    solution(['Enter uid1234 Muzi', 'Enter uid4567 Prodo','Leave uid1234','Enter uid1234 Prodo','Change uid4567 Ryan'])
+
+if __name__ == "__main__":
+    solution(
+        [
+            "Enter uid1234 Muzi",
+            "Enter uid4567 Prodo",
+            "Leave uid1234",
+            "Enter uid1234 Prodo",
+            "Change uid4567 Ryan",
+        ]
+    )

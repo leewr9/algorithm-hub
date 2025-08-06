@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 각 칸마다 S, L, 또는 R가 써져 있는 격자가 있습니다. 당신은 이 격자에서 빛을 쏘고자 합니다. 이 격자의 각 칸에는 다음과 같은 특이한 성질이 있습니다.
 
@@ -21,37 +21,41 @@ ex1.png
 1 ≤ grid의 각 문자열의 길이 ≤ 500
 grid의 모든 문자열의 길이는 서로 같습니다.
 grid의 모든 문자열은 'L', 'R', 'S'로 이루어져 있습니다.
-'''
+"""
+
 
 def S(prev, curr, size):
-    if prev == 'T':
-        return ((curr[0] + 1) % size[0], curr[1], 'T')
-    elif prev == 'D':
-        return ((curr[0] - 1) % size[0], curr[1], 'D')
-    elif prev == 'L':
-        return (curr[0], (curr[1] + 1) % size[1], 'L')
+    if prev == "T":
+        return ((curr[0] + 1) % size[0], curr[1], "T")
+    elif prev == "D":
+        return ((curr[0] - 1) % size[0], curr[1], "D")
+    elif prev == "L":
+        return (curr[0], (curr[1] + 1) % size[1], "L")
     else:
-        return (curr[0], (curr[1] - 1) % size[1], 'R')
+        return (curr[0], (curr[1] - 1) % size[1], "R")
+
 
 def L(prev, curr, size):
-    if prev == 'T':
-        return (curr[0], (curr[1] + 1) % size[1], 'L')
-    elif prev == 'D':
-        return (curr[0], (curr[1] - 1) % size[1], 'R')
-    elif prev == 'L':
-        return ((curr[0] - 1) % size[0], curr[1], 'D')
+    if prev == "T":
+        return (curr[0], (curr[1] + 1) % size[1], "L")
+    elif prev == "D":
+        return (curr[0], (curr[1] - 1) % size[1], "R")
+    elif prev == "L":
+        return ((curr[0] - 1) % size[0], curr[1], "D")
     else:
-        return ((curr[0] + 1) % size[0], curr[1], 'T')
+        return ((curr[0] + 1) % size[0], curr[1], "T")
+
 
 def R(prev, curr, size):
-    if prev == 'T':
-        return (curr[0], (curr[1] - 1) % size[1], 'R')
-    elif prev == 'D':
-        return (curr[0], (curr[1] + 1) % size[1], 'L')
-    elif prev == 'L':
-        return ((curr[0] + 1) % size[0], curr[1], 'T')
+    if prev == "T":
+        return (curr[0], (curr[1] - 1) % size[1], "R")
+    elif prev == "D":
+        return (curr[0], (curr[1] + 1) % size[1], "L")
+    elif prev == "L":
+        return ((curr[0] + 1) % size[0], curr[1], "T")
     else:
-        return ((curr[0] - 1) % size[0], curr[1], 'D')
+        return ((curr[0] - 1) % size[0], curr[1], "D")
+
 
 def solution(grid):
     answer = []
@@ -59,17 +63,17 @@ def solution(grid):
     cycles = set()
     for x in range(len(grid)):
         for y in range(len(grid[x])):
-            for m in ['T', 'D', 'L', 'R']:
+            for m in ["T", "D", "L", "R"]:
                 px, py, pm = S(m, (x, y), (len(grid), len(grid[x])))
 
                 count = 0
                 while (px, py, pm) not in cycles:
                     cycles.add((px, py, pm))
-                    if grid[px][py] == 'S':
+                    if grid[px][py] == "S":
                         mv = S(pm, (px, py), (len(grid), len(grid[px])))
-                    elif grid[px][py] == 'L':
+                    elif grid[px][py] == "L":
                         mv = L(pm, (px, py), (len(grid), len(grid[px])))
-                    elif grid[px][py] == 'R':
+                    elif grid[px][py] == "R":
                         mv = R(pm, (px, py), (len(grid), len(grid[px])))
                     px, py, pm = mv
                     count += 1
@@ -80,6 +84,7 @@ def solution(grid):
     answer.sort()
     return answer
 
-if __name__ == '__main__':
-    solution(["SL","LR"])
-    solution(["RLS","SLR"])
+
+if __name__ == "__main__":
+    solution(["SL", "LR"])
+    solution(["RLS", "SLR"])

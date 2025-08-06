@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 선행 스킬이란 어떤 스킬을 배우기 전에 먼저 배워야 하는 스킬을 뜻합니다.
 
@@ -16,17 +16,19 @@
 skill_trees는 길이 1 이상 20 이하인 배열입니다.
 skill_trees의 원소는 스킬을 나타내는 문자열입니다.
 skill_trees의 원소는 길이가 2 이상 26 이하인 문자열이며, 스킬이 중복해 주어지지 않습니다.
-'''
+"""
+
 
 def solution(skill, skill_trees):
     answer = 0
     for tree in skill_trees:
-        check = ''
+        check = ""
         for t in tree:
             if t in skill:
                 check += t
-        answer += 1 if skill[:len(check)] == check else 0
+        answer += 1 if skill[: len(check)] == check else 0
     return answer
 
-if __name__ == '__main__':
-    solution('CBD', ['BACDE', 'CBADF', 'AECB', 'BDA'])
+
+if __name__ == "__main__":
+    solution("CBD", ["BACDE", "CBADF", "AECB", "BDA"])
