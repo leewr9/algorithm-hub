@@ -101,7 +101,6 @@ def solution(info, query):
 
 
 if __name__ == "__main__":
-    # [1,1,1,1,2,4]
     solution(
         [
             "java backend junior pizza 150",
