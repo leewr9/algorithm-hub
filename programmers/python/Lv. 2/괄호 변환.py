@@ -31,27 +31,16 @@ p는 '(' 와 ')' 로만 이루어진 문자열이며 길이는 2 이상 1,000 �
 
 
 def solution(p):
-    def valid(s):
-        length = len(s)
-        while s:
-            s = s.replace("()", "")
-            if length == len(s):
-                break
-            length = len(s)
-        return True if not s else False
-
     def balanced(index):
-        open, close = 0, 0
+        count = 0
         for i in range(index, len(p)):
-            if p[i] == "(":
-                open += 1
-            elif p[i] == ")":
-                close += 1
-            if open == close:
-                if valid(p[index : i + 1]):
-                    return p[index : i + 1] + balanced(i + 1)
+            count += 1 if p[i] == "(" else -1
+            u = p[index : i + 1]
+            if count == 0:
+                if u[0] == "(":
+                    return u + balanced(i + 1)
                 else:
-                    return "(" + balanced(i + 1) + ")" + p[index + 1 : i].replace("(", "]").replace(")", "[")
+                    return "(" + balanced(i + 1) + ")" + u[1:-1].replace("(", "]").replace(")", "[")
         return ""
 
     answer = balanced(0).replace("]", ")").replace("[", "(")
