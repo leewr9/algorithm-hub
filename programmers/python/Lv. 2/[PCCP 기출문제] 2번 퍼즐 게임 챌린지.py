@@ -23,6 +23,27 @@ diffs[0] = 1
 제한 시간 내에 퍼즐을 모두 해결할 수 있는 경우만 입력으로 주어집니다.
 """
 
+
+def solution(diffs, times, limit):
+    answer = max(diffs)
+
+    diff_times = [0] * (max(diffs) + 1)
+    for i in range(len(diffs)):
+        diff_times[diffs[i]] += times[i] + (times[i - 1] if i > 0 else 0)
+
+    now = 0
+    usage = sum(times)
+    while usage <= limit and answer > 1:
+        if diff_times[answer] > 0:
+            now += diff_times[answer]
+        usage += now
+        if usage > limit:
+            break
+        answer -= 1
+
+    return answer
+
+
 def solution(diffs, times, limit):
     answer = limit
 
