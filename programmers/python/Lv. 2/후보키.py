@@ -35,18 +35,18 @@ def solution(relation):
 
     def find(index, combi, size):
         if len(combi) == size:
+            for a in answer:
+                if set(a).issubset(set(combi)):
+                    return
+
             check = []
             for r in relation:
                 rr = ",".join([r[c] for c in combi])
                 if rr in check:
-                    break
+                    return
                 check.append(rr)
-            else:
-                for a in answer:
-                    if set(a).issubset(set(combi)):
-                        break
-                else:
-                    answer.append(combi[:])
+
+            answer.append(combi[:])
             return
 
         for i in range(index, len(relation[0])):
